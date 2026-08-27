@@ -500,13 +500,13 @@ h2{font-size:clamp(28px,3.8vw,52px);margin-top:var(--s4)}
 /* ── About · AX 확산 계단 ── */
 /* 계단 폭 = 카드 폭. 카드가 콘텐츠로 크기를 정하고 막대가 그 폭을 그대로 따라간다 */
 .axg{margin-top:var(--s6);overflow-x:auto;padding-top:6px}
-.axg-in{position:relative;min-width:700px;padding:8px 12px 58px 52px;--gap:58px}
+.axg-in{position:relative;min-width:700px;padding:8px 12px 58px 70px;--gap:58px}
 .axline{
-  position:absolute;left:52px;right:0;bottom:calc(58px + var(--i) * var(--gap));
+  position:absolute;left:70px;right:0;bottom:calc(58px + var(--i) * var(--gap));
   border-top:1px dashed var(--line);
 }
 .axlv{
-  position:absolute;left:0;width:44px;text-align:right;
+  position:absolute;left:0;width:62px;text-align:right;
   bottom:calc(58px + var(--i) * var(--gap));transform:translateY(50%);
   font-size:11px;color:var(--ink-3);letter-spacing:-.01em;
 }
