@@ -321,7 +321,7 @@
 
   /* 활성 섹션 표시 */
   if (hasST) {
-    [["#automation", "#au-team"], ["#creative", "#cr-loop"], ["#operations", "#op-discovery"]]
+    [["#automation", "#au-team"], ["#operations", "#op-discovery"], ["#creative", "#cr-loop"]]
       .forEach(function (pair) {
         var link = document.querySelector('.nav a[href="' + pair[0] + '"]');
         var endEl = document.querySelector(pair[1]);
