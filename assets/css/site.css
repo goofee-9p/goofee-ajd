@@ -497,33 +497,50 @@ h2{font-size:clamp(28px,3.8vw,52px);margin-top:var(--s4)}
 @supports not (-webkit-text-stroke:1px #000){ .ribbon-track span{color:var(--accent)} }
 
 
-/* ── About · AX 확산 그래프 ── */
-.axg{margin-top:var(--s6);overflow-x:auto}
-.axg-in{position:relative;min-width:720px}
-.axg svg{width:100%;height:auto;display:block}
-.axg .g0{stop-color:var(--accent);stop-opacity:.20}
-.axg .g1{stop-color:var(--accent);stop-opacity:0}
-.axg-grid line{stroke:var(--line);stroke-width:1;stroke-dasharray:3 6}
-.axg-axis{stroke:var(--line-strong);stroke-width:1.2}
-.axg-lv text{font-family:var(--font-kr);font-size:11px;fill:var(--ink-3)}
-.axg-area{fill:url(#axgFill)}
-.axg-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.axg-dot{fill:var(--card);stroke:var(--accent);stroke-width:3}
-.axg-dot.is-last{fill:var(--accent)}
-.axp{position:absolute;z-index:2;transform:translate(0,calc(-100% - 12px))}
-.axp--r{transform:translate(-100%,calc(-100% - 12px))}
+/* ── About · AX 확산 계단 ── */
+/* 계단 폭 = 카드 폭. 카드가 콘텐츠로 크기를 정하고 막대가 그 폭을 그대로 따라간다 */
+.axg{margin-top:var(--s6);overflow-x:auto;padding-top:6px}
+.axg-in{position:relative;min-width:700px;padding:0 0 54px 52px}
+.axline{
+  position:absolute;left:52px;right:0;bottom:calc(56px + var(--i) * 54px);
+  border-top:1px dashed var(--line);
+}
+.axlv{
+  position:absolute;left:0;width:44px;text-align:right;
+  bottom:calc(56px + var(--i) * 54px);transform:translateY(50%);
+  font-size:11px;color:var(--ink-3);letter-spacing:-.01em;
+}
+.axs{display:flex;align-items:flex-end;position:relative}
+.axstep{position:relative;flex:0 0 auto;margin-bottom:calc(var(--i) * 54px)}
+.axstep--last{flex:1 1 auto}
+.axstep::after{
+  content:'';position:absolute;left:0;right:0;top:100%;
+  height:calc(54px + var(--i) * 54px);
+  background:linear-gradient(180deg,rgba(20,92,230,.13),rgba(20,92,230,0));
+}
+.axbar{position:relative;z-index:1;height:3px;border-radius:2px;background:var(--accent)}
+.axbar::before{
+  content:'';position:absolute;left:0;top:50%;width:13px;height:13px;border-radius:50%;
+  background:var(--card);border:3px solid var(--accent);transform:translate(-2px,-50%);
+}
+.axstep:not(:first-child) .axbar::after{
+  content:'';position:absolute;left:0;top:0;width:3px;height:54px;
+  background:var(--accent);border-radius:2px;
+}
+.axstep--last .axbar::before{background:var(--accent)}
+
 @keyframes axbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.axf{animation:axbob 5.5s ease-in-out infinite}
+.axf{animation:axbob 5.5s ease-in-out infinite;margin-bottom:13px}
 .axc{
-  display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:10px 14px 11px;box-shadow:var(--glass-shadow);white-space:nowrap;
+  display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:10px 14px 11px;box-shadow:var(--glass-shadow);
   transition:transform .25s ease;
 }
-.axc:hover{transform:scale(1.04)}
+.axc:hover{transform:scale(1.03)}
 .axc .d{display:block;font-family:var(--font-en);font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--accent-ink);margin-bottom:1px}
-.axc b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.25}
-.axc .s{display:block;font-size:11.5px;color:var(--ink-3);margin-top:3px;line-height:1.5}
-.axc .s .hl{display:inline;font-size:inherit;color:var(--accent-ink);font-weight:700;letter-spacing:0}
+.axc b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.25;white-space:nowrap}
+.axc .s{display:block;font-size:11.5px;color:var(--ink-3);margin-top:3px;line-height:1.5;white-space:nowrap}
+.axc .s .hl{display:inline;font-size:inherit;color:var(--accent-ink);font-weight:700;letter-spacing:0;white-space:nowrap}
 .axc--fill{background:var(--accent);border-color:var(--accent);box-shadow:0 18px 40px -16px rgba(20,92,230,.55)}
 .axc--fill .d{color:rgba(255,255,255,.75)}
 .axc--fill b{color:#fff}
