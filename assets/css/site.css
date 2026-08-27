@@ -499,20 +499,19 @@ h2{font-size:clamp(28px,3.8vw,52px);margin-top:var(--s4)}
 
 /* ── About · AX 확산 그래프 ── */
 .axg{margin-top:var(--s6);overflow-x:auto}
-.axg svg{width:100%;min-width:660px;height:auto;display:block}
+.axg svg{width:100%;min-width:720px;height:auto;display:block}
 .axg .g0{stop-color:var(--accent);stop-opacity:.20}
 .axg .g1{stop-color:var(--accent);stop-opacity:0}
 .axg-grid line{stroke:var(--line);stroke-width:1;stroke-dasharray:3 6}
 .axg-axis{stroke:var(--line-strong);stroke-width:1.2}
 .axg-lv text{font-family:var(--font-kr);font-size:11px;fill:var(--ink-3)}
-.axg-cap{font-family:var(--font-kr);font-size:10px;fill:var(--ink-3);letter-spacing:.12em}
 .axg-area{fill:url(#axgFill)}
 .axg-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
 .axg-dot{fill:var(--card);stroke:var(--accent);stroke-width:3}
 .axg-dot.is-last{fill:var(--accent)}
-.axg-m{font-family:var(--font-en);font-size:11px;font-weight:700;fill:var(--accent-ink);letter-spacing:.06em}
-.axg-t{font-family:var(--font-kr);font-size:14px;font-weight:700;fill:var(--ink);letter-spacing:-.01em}
-.axg-s{font-family:var(--font-kr);font-size:11.5px;fill:var(--ink-3)}
+.axg-m{font-family:var(--font-en);font-weight:700;fill:var(--accent-ink);letter-spacing:.04em}
+.axg-t{font-family:var(--font-kr);font-size:17.5px;font-weight:800;fill:var(--ink);letter-spacing:-.02em}
+.axg-s{font-family:var(--font-kr);font-size:12.5px;fill:var(--ink-3)}
 
 /* ═══════════ 섹션 공통 ═══════════ */
 .sec{padding:clamp(88px,9.5vw,150px) 0;position:relative}
