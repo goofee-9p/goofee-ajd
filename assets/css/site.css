@@ -500,22 +500,22 @@ h2{font-size:clamp(28px,3.8vw,52px);margin-top:var(--s4)}
 /* ── About · AX 확산 계단 ── */
 /* 계단 폭 = 카드 폭. 카드가 콘텐츠로 크기를 정하고 막대가 그 폭을 그대로 따라간다 */
 .axg{margin-top:var(--s6);overflow-x:auto;padding-top:6px}
-.axg-in{position:relative;min-width:700px;padding:0 0 54px 52px}
+.axg-in{position:relative;min-width:700px;padding:8px 12px 58px 52px;--gap:58px}
 .axline{
-  position:absolute;left:52px;right:0;bottom:calc(56px + var(--i) * 54px);
+  position:absolute;left:52px;right:0;bottom:calc(58px + var(--i) * var(--gap));
   border-top:1px dashed var(--line);
 }
 .axlv{
   position:absolute;left:0;width:44px;text-align:right;
-  bottom:calc(56px + var(--i) * 54px);transform:translateY(50%);
+  bottom:calc(58px + var(--i) * var(--gap));transform:translateY(50%);
   font-size:11px;color:var(--ink-3);letter-spacing:-.01em;
 }
 .axs{display:flex;align-items:flex-end;position:relative}
-.axstep{position:relative;flex:0 0 auto;margin-bottom:calc(var(--i) * 54px)}
+.axstep{position:relative;flex:0 0 auto;margin-bottom:calc(var(--i) * var(--gap))}
 .axstep--last{flex:1 1 auto}
 .axstep::after{
   content:'';position:absolute;left:0;right:0;top:100%;
-  height:calc(54px + var(--i) * 54px);
+  height:calc(58px + var(--i) * var(--gap));
   background:linear-gradient(180deg,rgba(20,92,230,.13),rgba(20,92,230,0));
 }
 .axbar{position:relative;z-index:1;height:3px;border-radius:2px;background:var(--accent)}
@@ -524,19 +524,20 @@ h2{font-size:clamp(28px,3.8vw,52px);margin-top:var(--s4)}
   background:var(--card);border:3px solid var(--accent);transform:translate(-2px,-50%);
 }
 .axstep:not(:first-child) .axbar::after{
-  content:'';position:absolute;left:0;top:0;width:3px;height:54px;
+  content:'';position:absolute;left:0;top:0;width:3px;height:var(--gap);
   background:var(--accent);border-radius:2px;
 }
 .axstep--last .axbar::before{background:var(--accent)}
 
 @keyframes axbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.axf{animation:axbob 5.5s ease-in-out infinite;margin-bottom:13px}
+.axf{animation:axbob 5.5s ease-in-out infinite;margin:0 9px 15px}
 .axc{
   display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
-  padding:10px 14px 11px;box-shadow:var(--glass-shadow);
+  padding:10px 12px 11px;box-shadow:var(--glass-shadow);
   transition:transform .25s ease;
 }
 .axc:hover{transform:scale(1.03)}
+.axstep--last .axc{width:max-content}
 .axc .d{display:block;font-family:var(--font-en);font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--accent-ink);margin-bottom:1px}
 .axc b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.25;white-space:nowrap}
 .axc .s{display:block;font-size:11.5px;color:var(--ink-3);margin-top:3px;line-height:1.5;white-space:nowrap}
